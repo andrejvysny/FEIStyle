@@ -24,8 +24,9 @@
 [![Latest Version](https://img.shields.io/github/release/Kyslik/FEIStyle.svg?style=flat-square)](https://github.com/Kyslik/FEIStyle/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
-Upgraded FEIStyle ([original](http://www.uim.elf.stuba.sk/kaivt/Predmety/Sablony)):
-
+Upgraded FEIStyle ([original](https://github.com/Kyslik/FEIStyle)) modified for use at the Institute of Robotics and Cybernetics FEI STU. 
+ 
+ - Use Times New Roman font for consistency with the [official MS word templates from URK](https://urk.fei.stuba.sk/semester/pazp)
  - support for citation standard [ISO-690](https://github.com/michal-h21/biblatex-iso690) required by [STU FEI](http://www.fei.stuba.sk/sk/kniznica-fei/vzory-bibliografickych-odkazov-a-citovanie.html?page_id=1756), using biber
  - support for <strike>acronym</strike> glossaries package
  - removed FEIstyle.bst (not needed)

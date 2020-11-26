@@ -44,6 +44,11 @@
     \def\FEIenglish{1} 
 }
 
+\def\FEItimesFont{0}
+\DeclareOption{tnr}{
+    \def\FEItimesFont{1}
+}
+
 \def\FEIgen{0}
 \DeclareOption{m}{
     \def\FEIgen{1} 
@@ -223,6 +228,14 @@
 \parskip=1pt
 \linespread{1.3}
 \hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black}
+
+\if\FEItimesFont1
+    % Using Times font for URK (taken from IEEEtran.cls)
+    \renewcommand{\sfdefault}{phv}
+    \renewcommand{\rmdefault}{ptm}
+    \renewcommand{\ttdefault}{pcr}
+\fi
+
 \sectionfont{\bf\fontsize{22pt}{1.3}\selectfont}
 \subsectionfont{\bf\fontsize{16pt}{1.3}\selectfont}
 \subsubsectionfont{\bf\fontsize{14pt}{1.3}\selectfont}
