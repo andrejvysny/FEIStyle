@@ -102,6 +102,13 @@
 \usepackage[acronym,nopostdot,nogroupskip,nonumberlist]{glossaries}
 % \usepackage{showframe} % debugging overflows
 
+% Set the style of figure, table and equation numbering
+% https://tex.stackexchange.com/questions/54241/change-the-type-of-equation-numbering-in-document-class-article
+% https://texblog.org/2014/12/04/continuous-figuretable-numbering-in-latex/
+\numberwithin{equation}{section}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
 % \cftsetpnumwidth{1.8em} % set the dots width in loX (f,t,l,a...) https://tex.stackexchange.com/q/369283/106389
 
 \newboolean{isThesis}
@@ -253,26 +260,26 @@
   captionpos=b % caption below text
 }
 
-%\IfEqCase*{\FEIenglish}{
-%    {0}{
-%        \addto\captionsslovak{\renewcommand{\figurename}{Obr\a'azok}}
-%        \addto\captionsslovak{\renewcommand{\tablename}{Tabu\v{l}ka}}
-%        \addto\captionsslovak{\renewcommand{\contentsname}{Obsah}}
-%        \addto\captionsslovak{\renewcommand\listfigurename{Zoznam obr\a'azkov}}
-%        \addto\captionsslovak{\renewcommand\listtablename{Zoznam tabuliek}}
-%        \addto\captionsslovak{\renewcommand{\chaptername}{Kapitola}}
-%        \addto\captionsslovak{\renewcommand{\lstlistingname}{V\a'ypis}}
-%        \renewcommand{\ALG@name}{Algoritmus}}
-%    {1}{
-%        \addto\captionsenglish{\renewcommand{\figurename}{Figure}}
-%        \addto\captionsenglish{\renewcommand{\tablename}{Table}}
-%        \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
-%        \addto\captionsenglish{\renewcommand\listfigurename{List of Figures}}
-%        \addto\captionsenglish{\renewcommand\listtablename{List of Table}}
-%        \addto\captionsenglish{\renewcommand{\chaptername}{Chapter}}
-%        \addto\captionsenglish{\renewcommand{\lstlistingname}{Listing}}
-%        \renewcommand{\ALG@name}{Algorithm}}
-%    }[]
+\IfEqCase*{\FEIenglish}{
+    {0}{
+        % \addto\captionsslovak{\renewcommand{\figurename}{Obr\a'azok}}
+        % \addto\captionsslovak{\renewcommand{\tablename}{Tabu\v{l}ka}}
+        % \addto\captionsslovak{\renewcommand{\contentsname}{Obsah}}
+        % \addto\captionsslovak{\renewcommand\listfigurename{Zoznam obr\a'azkov}}
+        % \addto\captionsslovak{\renewcommand\listtablename{Zoznam tabuliek}}
+        % \addto\captionsslovak{\renewcommand{\chaptername}{Kapitola}}
+        \addto\captionsslovak{\renewcommand{\lstlistingname}{V\a'ypis}}
+        \renewcommand{\ALG@name}{Algoritmus}}
+    {1}{
+        % \addto\captionsenglish{\renewcommand{\figurename}{Figure}}
+        % \addto\captionsenglish{\renewcommand{\tablename}{Table}}
+        % \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
+        % \addto\captionsenglish{\renewcommand\listfigurename{List of Figures}}
+        % \addto\captionsenglish{\renewcommand\listtablename{List of Table}}
+        % \addto\captionsenglish{\renewcommand{\chaptername}{Chapter}}
+        \addto\captionsenglish{\renewcommand{\lstlistingname}{Listing}}
+        \renewcommand{\ALG@name}{Algorithm}}
+    }[]
 
 % http://tex.stackexchange.com/questions/588/how-can-i-change-the-margins-for-only-part-of-the-text
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
@@ -711,7 +718,7 @@
     \setcounter{lstlisting}{0}
     \counterwithin{lstlisting}{section}
     % \setcounter{page}{1}  
-    \pagenumbering{Roman}
+    % \pagenumbering{Roman} % Use default page numbering
     \cleardoublepage
     \phantomsection 
     \addcontentsline{toc}{section}{\@zoznamPri}
